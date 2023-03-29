@@ -1,10 +1,34 @@
 {
   "files": {
-    "main.js": "/www.parveen-savart.com/static/js/main.72828642.js",
+    "main.js": "/www.parveen-savart.com/static/js/main.58173a17.js",
+    "static/media/intersection.jpeg": "/www.parveen-savart.com/static/media/intersection.45fbb940a4382a2d87bf.jpeg",
+    "static/media/5-.jpeg": "/www.parveen-savart.com/static/media/5-.3e7edf7c21b24264f3bd.jpeg",
+    "static/media/prochains-concerts.jpeg": "/www.parveen-savart.com/static/media/prochains-concerts.788b7fcbf4d41c91f832.jpeg",
+    "static/media/4-.jpeg": "/www.parveen-savart.com/static/media/4-.09ee85a13cad7a2661af.jpeg",
+    "static/media/banniere.jpeg": "/www.parveen-savart.com/static/media/banniere.aa64d13fb561e3cdbacb.jpeg",
+    "static/media/bio.jpeg": "/www.parveen-savart.com/static/media/bio.3f91515fa494b2cf92f9.jpeg",
+    "static/media/1-.jpeg": "/www.parveen-savart.com/static/media/1-.90494988cb627917445c.jpeg",
+    "static/media/2-.jpeg": "/www.parveen-savart.com/static/media/2-.b7f1e04b7d4c14e8cd1c.jpeg",
+    "static/media/banniere.webp": "/www.parveen-savart.com/static/media/banniere.3b35b3b0dd8bb825657e.webp",
+    "static/media/5-.webp": "/www.parveen-savart.com/static/media/5-.30f20afd3bc8dfa803e8.webp",
+    "static/media/0-.jpeg": "/www.parveen-savart.com/static/media/0-.f75fa64d4c5755150c49.jpeg",
+    "static/media/3-.jpeg": "/www.parveen-savart.com/static/media/3-.b95febb360b4aa4a78d0.jpeg",
+    "static/media/bio.webp": "/www.parveen-savart.com/static/media/bio.3d3ab4dbd0824476bcd6.webp",
+    "static/media/prochains-concerts.webp": "/www.parveen-savart.com/static/media/prochains-concerts.0e4db9ac967c398de364.webp",
+    "static/media/4-.webp": "/www.parveen-savart.com/static/media/4-.159b1f7a05ca0f7b3e49.webp",
+    "static/media/1-.webp": "/www.parveen-savart.com/static/media/1-.5b9b07a69d12eb79d6c2.webp",
+    "static/media/2-.webp": "/www.parveen-savart.com/static/media/2-.f1fd06b54707875a17e9.webp",
+    "static/media/0-.webp": "/www.parveen-savart.com/static/media/0-.39d3b593ab955c9e646d.webp",
+    "static/media/3-.webp": "/www.parveen-savart.com/static/media/3-.d20faf18fb3bcd85cc99.webp",
+    "static/media/instagram.svg": "/www.parveen-savart.com/static/media/instagram.3091acf9f565219d3b0e71f3855bf9a6.svg",
+    "static/media/youtube.svg": "/www.parveen-savart.com/static/media/youtube.4d291f4181cea6ef7aad777923e65c73.svg",
     "index.html": "/www.parveen-savart.com/index.html",
-    "main.72828642.js.map": "/www.parveen-savart.com/static/js/main.72828642.js.map"
+    "static/media/cancel.svg": "/www.parveen-savart.com/static/media/cancel.da5c42223be72e07b42078ba244d26c0.svg",
+    "static/media/next.svg": "/www.parveen-savart.com/static/media/next.2dc7a76f28f4feac65e5d1d0b70e240b.svg",
+    "static/media/facebook.svg": "/www.parveen-savart.com/static/media/facebook.d1accecba2e811e519317b824c285acb.svg",
+    "main.58173a17.js.map": "/www.parveen-savart.com/static/js/main.58173a17.js.map"
   },
   "entrypoints": [
-    "static/js/main.72828642.js"
+    "static/js/main.58173a17.js"
   ]
 }
