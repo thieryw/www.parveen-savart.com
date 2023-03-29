@@ -6,7 +6,8 @@ export const routeDefs = {
 	"bio": defineRoute("/biography"),
 	"legal": defineRoute("/mentions-legal"),
 	"agenda": defineRoute("/agenda"),
-	"media": defineRoute("/media")
+	"media": defineRoute("/media"),
+	"contact": defineRoute("/contact")
 };
 
 makeThisModuleAnExecutableRouteLister(routeDefs);

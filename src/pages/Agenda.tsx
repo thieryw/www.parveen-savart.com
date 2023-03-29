@@ -1,3 +1,3 @@
 export function Agenda(){
-	return <div></div>
+	return <div>agenda</div>
 }
