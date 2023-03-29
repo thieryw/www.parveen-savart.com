@@ -15,8 +15,10 @@ import { files as jpegFiles } from "../generatedImgExportsHomeMiniGallery"
 import { files as webpFiles } from "../generatedWebpExportsHomeMiniGallery";
 import { SectionTitle } from "../components/SectionTitle";
 import { Button } from "../components/Button";
-import nextConcertsImg from "../assets/img/home/prochains-concerts.jpeg"
-import nextConcertsWebp from "../assets/webp/home/prochains-concerts.webp"
+import nextConcertsImg from "../assets/img/home/prochains-concerts.jpeg";
+import nextConcertsWebp from "../assets/webp/home/prochains-concerts.webp";
+import contactImg from "../assets/img/home/contact.jpeg";
+import contactWebp from "../assets/webp/home/contact.webp";
 
 const imageSources = webpFiles.files.map(({ url }, index) => [
 	{
@@ -125,14 +127,14 @@ export function Home() {
 				<div className={classes.nextConcertTitleAndButtonWrapper}>
 					<SectionTitle
 						mode="SectionTitle"
-						title="PROCHAINS CONCERTS"
-						miniTitle="LIVE"
+						title={t("nextConcertTitle")}
+						miniTitle={t("nextConcertMiniTitle")}
 						className={classes.concertsSectionTitle}
 						dark={true}
 					/>
 					<Button 
 						link={routes.agenda().link}
-						text="DATES"
+						text={t("nextConcertButtonText")}
 					/>
 
 				</div>
@@ -152,6 +154,29 @@ export function Home() {
 
 			</div>
 		</section>
+
+		<Section 
+			buttonLink={routes.contact().link}
+			buttonText={t("contactButtonText")}
+			imageSide="right"
+			miniTitle={t("contactMiniTitle")}
+			title={t("contactTitle")}
+			text={t("contactText")}
+			imgSrc={contactWebp}
+			imgSources={[
+				{
+					"srcSet": contactWebp,
+					"type": "image/webp"
+				},
+				{
+					"srcSet": contactImg,
+					"type": "image/jpeg"
+				}
+			]}
+		/>
+
+
+
 
 
 	</div>
@@ -258,4 +283,11 @@ export const { i18n } = declareComponentKeys<
 	| "mediaMiniTitle"
 	| "mediaTitle"
 	| "mediaButtonText"
+	| "nextConcertMiniTitle"
+	| "nextConcertTitle"
+	| "nextConcertButtonText"
+	| "contactTitle"
+	| "contactMiniTitle"
+	| "contactText"
+	| "contactButtonText"
 >()({ Home });

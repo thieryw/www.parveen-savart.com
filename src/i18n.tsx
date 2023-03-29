@@ -50,7 +50,14 @@ Anne Le Bozec, Jeff Cohen, Margreet Hönig, ou encore Regina Werner...`,
 					"bioButtonText": "BIOGRAPHIE",
 					"mediaMiniTitle": "media",
 					"mediaTitle": "Découvrez mes images & vidéos",
-					"mediaButtonText": "VOIR PLUS"
+					"mediaButtonText": "VOIR PLUS",
+					"nextConcertMiniTitle": "LIVE",
+					"nextConcertTitle": "PROCHAINS CONCERTS",
+					"nextConcertButtonText": "DATES",
+					"contactTitle": "Prenons Contact",
+					"contactMiniTitle": "CONTACT",
+					"contactButtonText": "CONTACT",
+					"contactText": "N'hésitez pas à m'écrire et à vous informer sur mon actualité en me suivant sur les réseaux sociaux."
 				},
 			}
     }
