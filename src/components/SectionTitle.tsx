@@ -64,7 +64,8 @@ const useStyles = makeStyles<{mode: SectionTitleProps["mode"]; dark: SectionTitl
 		...(mode === "paragraphTitle" ? {} : {
 			"display": "flex",
 			"flexDirection": "column",
-			"alignItems": "center"
+			"alignItems": "center",
+			"position": "relative"
 		})
 	},
 	"decorativeLine": {

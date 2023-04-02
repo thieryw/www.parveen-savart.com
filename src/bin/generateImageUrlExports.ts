@@ -16,3 +16,16 @@ generateMediaFile({
 });
 
 
+generateMediaFile({
+	"acceptedFileExtensions": [".webp"],
+	"mediaPath": join(__dirname, "..", "assets", "webp", "media", "gallery"),
+	"generatedFilePath": join(__dirname, ".."),
+	"generatedFileName": "generatedWebpExportsMediaGallery"
+});
+
+generateMediaFile({
+	"acceptedFileExtensions": [".jpeg", ".png"],
+	"mediaPath": join(__dirname, "..", "assets", "img", "media", "gallery"),
+	"generatedFilePath": join(__dirname, ".."),
+	"generatedFileName": "generatedImgExportsMediaGallery"
+});

@@ -19,19 +19,9 @@ import nextConcertsImg from "../assets/img/home/prochains-concerts.jpeg";
 import nextConcertsWebp from "../assets/webp/home/prochains-concerts.webp";
 import contactImg from "../assets/img/home/contact.jpeg";
 import contactWebp from "../assets/webp/home/contact.webp";
+import { generateImgSources } from "tools/generateImgSources";
 
-const imageSources = webpFiles.files.map(({ url }, index) => [
-	{
-		"srcSet": url,
-		"type": "image/webp"
-	},
-	{
-
-		"srcSet": jpegFiles.files[index].url,
-		"type": "image/jpeg"
-
-	}
-])
+const imageSources = generateImgSources(webpFiles.files, jpegFiles.files);
 
 export function Home() {
 	const { t } = useTranslation({ Home })
@@ -110,8 +100,8 @@ export function Home() {
 			<ArtGallery
 				thumbNailImageSources={imageSources}
 				lightBoxImageSources={imageSources}
-				thumbNailImages={jpegFiles.files}
-				lightBoxImages={jpegFiles.files}
+				thumbNailImages={webpFiles.files}
+				lightBoxImages={webpFiles.files}
 				imageAverageHeight={200}
 				hideImageNames={true}
 				className={classes.gallery}
@@ -132,7 +122,7 @@ export function Home() {
 						className={classes.concertsSectionTitle}
 						dark={true}
 					/>
-					<Button 
+					<Button
 						link={routes.agenda().link}
 						text={t("nextConcertButtonText")}
 					/>
@@ -155,7 +145,7 @@ export function Home() {
 			</div>
 		</section>
 
-		<Section 
+		<Section
 			buttonLink={routes.contact().link}
 			buttonText={t("contactButtonText")}
 			imageSide="right"

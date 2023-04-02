@@ -107,7 +107,6 @@ const useStyles = makeStyles<{ imageSide: SectionProps["imageSide"] }>()((theme,
 			})(),
 			"alignItems": theme.windowInnerWidth < breakpointsValues.md ? undefined : "center",
 			"justifyContent": "center",
-			...theme.spacing.topBottom("padding", `${theme.spacing(7)}px`),
 			"padding": theme.spacing({
 				"rightLeft": theme.windowInnerWidth < breakpointsValues.sm ? `${theme.spacing(4)}px` : `${theme.spacing(7)}px`,
 				"topBottom": `${theme.spacing(7)}px`

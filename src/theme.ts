@@ -7,6 +7,8 @@ import { createThemeProvider,
 } from "onyxia-ui";
 import { createIcon } from "onyxia-ui/Icon";
 import { createText } from "onyxia-ui/Text";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 
 export const { useTheme, ThemeProvider } = createThemeProvider({
@@ -46,7 +48,12 @@ export const { useTheme, ThemeProvider } = createThemeProvider({
 	"palette": {
 		...defaultPalette,
 		"customGradientColor": "linear-gradient(90deg, hsla(0, 100%, 6%, 1) 0%, hsla(0, 94%, 13%, 1) 100%)",
-		"buttonColor": "#a65959"
+		"buttonColor": "#a65959",
+		"transparentBackground": (params: {direction: "to left" | "to right" | "to bottom" | "to top"}) => {
+			const {direction} = params;
+			return `linear-gradient(${direction}, rgba(255,253,240,0.4), rgba(255,253,240,1))`;
+		}
+
 
 	}
 });
@@ -58,4 +65,7 @@ export const breakpointsValues = {
 	"lg+": 1400 as const
 };
 
-export const Icon = createIcon({});
+export const { Icon } = createIcon({
+	"arrowForwards": ArrowForwardIosIcon,
+	"arrowBack": ArrowBackIosIcon
+});
