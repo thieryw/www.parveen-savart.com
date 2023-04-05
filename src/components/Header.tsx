@@ -161,7 +161,7 @@ const useStyles = makeStyles<{
 			"zIndex": 2,
 			"top": !isMenuVisible ? -(headerHeight + 50) : 0,
 			"transition": "top 300ms",
-			"background": theme.colors.palette.customGradientColor,
+			"background": "rgba(0,0,0,80%)",
 			"width": "100%"
 		},
 		"links": {},

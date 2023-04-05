@@ -1,16 +1,18 @@
 import {memo} from "react";
-import {makeStyles, breakpointsValues} from "../theme";
+import {makeStyles} from "../theme";
 
 
 export type YouTubeIframeProps = {
 	videoUrl: string;
 	className?: string;
+	width: string | number;
+	height: string | number;
 }
 
 export const YouTubeIframe = memo((props: YouTubeIframeProps)=>{
 
-	const {videoUrl, className} = props;
-	const {classes, cx} = useStyle();
+	const {videoUrl, className, width, height} = props;
+	const {classes, cx} = useStyle({width, height});
 
 	return (
 		<iframe className={cx(classes.root, className)} allowFullScreen src={videoUrl} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
@@ -18,35 +20,12 @@ export const YouTubeIframe = memo((props: YouTubeIframeProps)=>{
 
 });
 
-const useStyle = makeStyles()(
-	theme => ({
+const useStyle = makeStyles<{ width: string | number; height: string | number }>()(
+	(theme, { width, height }) => ({
 		"root": {
 			"border": "none",
-			...(() => {
-				if (
-					theme.windowInnerWidth < breakpointsValues.lg &&
-					theme.windowInnerWidth >= breakpointsValues.md
-				) {
-					return {
-						"width": 700,
-						"height": (700 / 100) * 55
-					}
-				};
-
-				if (theme.windowInnerWidth < breakpointsValues.md) {
-					return {
-						"width": "100%",
-						"height": (theme.windowInnerWidth / 100) * 60
-					}
-				};
-
-
-				return {
-					"width": 1000,
-					"height": 550,
-				}
-
-			})()
+			width,
+			height
 		}
 
 	})

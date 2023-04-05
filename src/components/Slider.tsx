@@ -16,10 +16,11 @@ export type SliderProps = {
     slides?: ReactNode[];
     autoPlayTimeInterval?: number;
     width?: string | number;
+    numberOfVisibleSlides?: number;
 };
 
 export const Slider = memo((props: SliderProps) => {
-    const { className, slides, title, autoPlayTimeInterval, width } = props;
+    const { className, slides, title, autoPlayTimeInterval, width, numberOfVisibleSlides } = props;
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ "loop": true });
     const [isPlaying, setIsPlaying] = useState(false);
@@ -105,6 +106,7 @@ export const Slider = memo((props: SliderProps) => {
     const { classes, cx } = useStyles(
         {
             width,
+            "numberOfVisibleSlides": numberOfVisibleSlides ?? 1
         },
         { props },
     );
@@ -117,11 +119,6 @@ export const Slider = memo((props: SliderProps) => {
                 </Text>
             )}
             <div className={classes.sliderWrapper}>
-                <Icon
-                    iconId="arrowBack"
-                    className={classes.arrows}
-                    onClick={onClickFactory("left")}
-                />
                 <div className={classes.viewport} ref={emblaRef}>
                     <div className={classes.container}>
                         {slides !== undefined &&
@@ -136,11 +133,19 @@ export const Slider = memo((props: SliderProps) => {
                             ))}
                     </div>
                 </div>
-                <Icon
-                    iconId="arrowForwards"
-                    className={classes.arrows}
-                    onClick={onClickFactory("right")}
-                />
+                <div className={classes.arrowWrapper}>
+                    <Icon
+                        iconId="arrowBack"
+                        className={cx(classes.arrows, classes.prev)}
+                        onClick={onClickFactory("left")}
+                    />
+                    <Icon
+                        iconId="arrowForwards"
+                        className={cx(classes.arrows, classes.next)}
+                        onClick={onClickFactory("right")}
+                    />
+
+                </div>
             </div>
         </section>
     );
@@ -148,7 +153,8 @@ export const Slider = memo((props: SliderProps) => {
 
 const useStyles = makeStyles<{
     width: number | string | undefined;
-}>({ "name": { Slider } })((theme, { width }) => ({
+    numberOfVisibleSlides: number;
+}>({ "name": { Slider } })((theme, { width, numberOfVisibleSlides }) => ({
     "root": {
         ...theme.spacing.rightLeft("padding", `${theme.spacing(7)}px`),
         ...theme.spacing.topBottom("margin", `${theme.spacing(7)}px`),
@@ -159,6 +165,7 @@ const useStyles = makeStyles<{
     },
     "sliderWrapper": {
         "display": "flex",
+        "flexDirection": "column",
         "alignItems": "center",
         "justifyContent": "center",
         "width": width ?? "100%",
@@ -166,6 +173,7 @@ const useStyles = makeStyles<{
     "viewport": {
         "overflow": "hidden",
         "userSelect": "none",
+        "width": "100%"
     },
     "container": {
         "display": "flex",
@@ -178,16 +186,26 @@ const useStyles = makeStyles<{
             "transform": "scale(1.2)",
         },
     },
+    "arrowWrapper": {
+
+
+
+    },
     "slide": {
-        "minWidth": "100%",
+        "minWidth": `${100 / numberOfVisibleSlides}%`,
         "display": "flex",
         "justifyContent": "center",
         "overflow": "hidden",
         "padding": theme.spacing({
-            "rightLeft": 4,
+            "rightLeft": 1,
             "topBottom": 4,
         }),
     },
-    "prev": {},
-    "next": {},
+    "prev": {
+        "marginRight": theme.spacing(4)
+    },
+    "next": {
+        "marginLeft": theme.spacing(4)
+
+    },
 }));

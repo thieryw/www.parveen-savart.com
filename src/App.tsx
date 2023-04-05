@@ -73,15 +73,15 @@ export function App() {
 			links={links}
 			socialMediaLinks={[
 				{
-					"href": "https://www.instagram.com/marion_vergezpascal/",
+					"href": "https://www.instagram.com/parveensavart/",
 					"iconUrl": instagramIconUrl,
 				},
 				{
-					"href": "https://www.facebook.com/marion.vergezpascal.9",
+					"href": "https://www.facebook.com/parveen.st",
 					"iconUrl": facebookIconUrl,
 				},
 				{
-					"href": "https://www.youtube.com/channel/UC7FvEzh4S_F1W6JHcr2Ssqw",
+					"href": "https://www.youtube.com/@parveenette",
 					"iconUrl": youtubeIconUrl
 				}
 			]}

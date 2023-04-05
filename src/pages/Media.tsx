@@ -1,6 +1,6 @@
 import { BackgroundFade } from "../components/BackgroundFade";
 import backgroundImg from "../assets/img/media/background.jpeg";
-import { makeStyles, breakpointsValues } from "../theme";
+import { makeStyles, breakpointsValues, useTheme } from "../theme";
 import { SectionTitle } from "../components/SectionTitle";
 import { ArtGallery } from "react-art-gallery";
 import {files as jpegFiles} from "../generatedImgExportsMediaGallery";
@@ -12,9 +12,18 @@ import { Slider } from "../components/Slider";
 import { Button } from "../components/Button";
 
 const imageSources = generateImgSources(webpFiles.files, jpegFiles.files);
+const videoUrls = [
+	"https://www.youtube.com/embed/HaQuofkbXas",
+	"https://www.youtube.com/embed/BcxKIagxf_4",
+	"https://www.youtube.com/embed/mZpf9Zky0Kw",
+	"https://www.youtube.com/embed/R3QGHjxlJGk",
+	"https://www.youtube.com/embed/tijp5fO73ko",
+	"https://www.youtube.com/embed/R3QGHjxlJGk"
+]
 
 export function Media() {
 	const { t } = useTranslation({ Media })
+	const { windowInnerWidth } = useTheme();
 
 	const { classes } = useStyles();
 	return <div className={classes.root}>
@@ -56,6 +65,7 @@ export function Media() {
 				miniTitle={t("videoMiniTitle")}
 			/>
 
+
 			<Slider
 				classes={{
 					"sliderWrapper": classes.slider,
@@ -63,19 +73,35 @@ export function Media() {
 					"prev": classes.navSlider
 
 				}}
-				slides={[
-					<YouTubeIframe
-						videoUrl="https://www.youtube.com/embed/HaQuofkbXas"
-					/>,
-					<YouTubeIframe
-						videoUrl="https://www.youtube.com/embed/mZpf9Zky0Kw"
-					/>,
-					<YouTubeIframe
-						videoUrl="https://www.youtube.com/embed/tijp5fO73ko"
-					/>
-				]}
+				numberOfVisibleSlides={(()=>{
+					if(windowInnerWidth > breakpointsValues.lg){
+						return 3
+					}
+					if(windowInnerWidth <= breakpointsValues.lg && windowInnerWidth > breakpointsValues.sm){
+						return 2
+					}
+					return 1
+				})()}
+				slides={videoUrls.map(url => <YouTubeIframe videoUrl={url} {...(()=>{
+					if(windowInnerWidth > breakpointsValues.lg){
+						return {
+							"width": "33.33333333vw",
+							"height": "18vw"
+						}
+					}
+					if(windowInnerWidth <= breakpointsValues.lg && windowInnerWidth > breakpointsValues.sm){
+						return {
+							"width": "50vw",
+							"height": "30vw"
+						}
+					}
+					return {
+						"width": "100vw",
+						"height": "60vw"
+					}
+				})()} />)}
 			/>
-			<Button 
+			<Button
 				text="YOUTUBE"
 				link={{
 					"href": "https://www.youtube.com/@parveenette"
@@ -118,25 +144,7 @@ const useStyles = makeStyles()(theme => {
 
 		},
 		"slider": {
-			...(() => {
-				if (
-					theme.windowInnerWidth < breakpointsValues.lg &&
-					theme.windowInnerWidth >= breakpointsValues.md
-				) {
-					return {
-						"width": 800
-					};
-				};
-				if (theme.windowInnerWidth < breakpointsValues.md) {
-					return {
-						"width": "100vw",
-						...theme.spacing.rightLeft("padding", `${theme.spacing(1)}px`),
-					}
-				}
-				return {
-					"width": 1100
-				}
-			})()
+			"width": "100vw"
 		},
 		"navSlider": {
 			...(theme.windowInnerWidth < breakpointsValues.md ? {

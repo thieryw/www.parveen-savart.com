@@ -118,7 +118,7 @@ const useStyles = makeStyles<{ imageSide: SectionProps["imageSide"] }>()((theme,
 			"marginBottom": theme.spacing(6)
 		},
 		"imageWrapper": {
-			"maxWidth": 500,
+			"maxWidth": 450,
 			"alignSelf": theme.windowInnerWidth < breakpointsValues.md ? "flex-end" : undefined,
 			"position": "relative",
 			...(() => {
