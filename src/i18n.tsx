@@ -20,7 +20,8 @@ export const {
 	typeof import ("pages/Home").i18n |
 	typeof import ("App").i18n |
 	typeof import ("pages/Media").i18n |
-	typeof import ("pages/Bio").i18n 
+	typeof import ("pages/Bio").i18n |
+	typeof import ("pages/Contact").i18n
 >()(
     { languages, fallbackLanguage },
     {
@@ -82,6 +83,16 @@ Elle travaille actuellement en étroite collaboration avec le compositeur Arthur
 Prochainement, Parveen Savart se produira dans le rôle de Chimène avec le Concert de la Loge et l’Arcal lyrique pour la création de Chimène de Sacchini. On pourra également l’entendre dans le rôle de Suzanne dans Un mari à la porte d’Offenbach.
 					
 `
+				},
+				"Contact": {
+					"contactTitle": "PRENONS CONTACT",
+					"contactMiniTitle": "CONTACT",
+					"generalTitle": "GENERAL",
+					"email": "contact@email.com",
+					"phoneNumber": "+33 6 34 56 34 67",
+					"socialTitle": "SOCIAL",
+					"facebook": "FACEBOOK",
+					"instagram": "INSTAGRAM"
 				}
 			}
     }

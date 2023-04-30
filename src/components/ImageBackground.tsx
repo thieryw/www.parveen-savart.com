@@ -8,11 +8,12 @@ type ImageBackgroundProps = {
 	sources?: Source[]
 	alt?: string;
 	className?: string;
+	classes?: Partial<ReturnType<typeof useStyles>["classes"]>;
 }
 
 export function ImageBackground(props: ImageBackgroundProps) {
 	const { src, alt, sources, className } = props;
-	const { classes, cx } = useStyles()
+	const { classes, cx } = useStyles({}, { props })
 	return <div
 		className={cx(classes.root, className)}
 	>
@@ -30,7 +31,7 @@ export function ImageBackground(props: ImageBackgroundProps) {
 }
 
 
-const useStyles = makeStyles()(() => ({
+const useStyles = makeStyles<{}>()(() => ({
 	"root": {
 		"width": "100%",
 		"height": "100%",

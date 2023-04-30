@@ -187,7 +187,7 @@ const useStyles = makeStyles<{
 		},
 		"smallDeviceLinksWrapper": {
 			"position": "absolute",
-			"background": theme.colors.palette.customGradientColor,
+			"background": "rgba(0,0,0,80%)",
 			//"width": theme.windowInnerWidth / 2,
 			//"left": -theme.paddingRightLeft,
 			"top": headerHeight - theme.spacing(3),

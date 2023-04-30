@@ -34,17 +34,17 @@ export function App() {
 			"label": t("bio")
 		},
 		{
-			...routes.contact().link,
-			"label": t("contact")
+			...routes.media().link,
+			"label": t("media")
 		},
 		{
 			...routes.agenda().link,
 			"label": t("agenda")
 		},
 		{
-			...routes.media().link,
-			"label": t("media")
-		},
+			...routes.contact().link,
+			"label": t("contact")
+		}
 	], [t])
 
 
