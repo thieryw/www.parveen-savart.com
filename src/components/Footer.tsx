@@ -13,9 +13,11 @@ import { Logo } from "./Logo";
 export type FooterProps = {
 	title?: ReactNode;
 	className?: string;
-	links?: ({
+	links: {
 		label: string;
-	} & Link)[];
+		href: string;
+		onClick?: () => void;
+	}[];
 
 	socialMediaLinks?: ({
 		iconUrl: string;
