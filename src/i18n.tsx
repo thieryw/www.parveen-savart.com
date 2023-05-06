@@ -21,7 +21,8 @@ export const {
 	typeof import ("App").i18n |
 	typeof import ("pages/Media").i18n |
 	typeof import ("pages/Bio").i18n |
-	typeof import ("pages/Contact").i18n
+	typeof import ("pages/Contact").i18n |
+	typeof import ("pages/Agenda").i18n
 >()(
     { languages, fallbackLanguage },
     {
@@ -93,6 +94,9 @@ Prochainement, Parveen Savart se produira dans le rôle de Chimène avec le Conc
 					"socialTitle": "SOCIAL",
 					"facebook": "FACEBOOK",
 					"instagram": "INSTAGRAM"
+				},
+				"Agenda": {
+					"buttonLabel": "EN SAVOIR PLUS"
 				}
 			}
     }
