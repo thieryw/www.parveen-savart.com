@@ -27,6 +27,9 @@ export function Agenda() {
 					}
 				]}
 			/>
+			<div className={classes.filter}>
+
+			</div>
 			<SectionTitle 
 				dark={true}
 				mode="SectionTitle"
@@ -76,22 +79,31 @@ const useStyles = makeStyles()(theme => {
 			"display": "flex",
 			"flexDirection": "column",
 			"alignItems": theme.windowInnerWidth < breakpointsValues.md ? undefined : "center"
-
 		},
 		"line": {
 			"width": "80%",
 			"height": 1,
 			"borderTop": `solid ${theme.colors.palette.buttonColor} 1px`,
 			...theme.spacing.topBottom("margin", `${theme.spacing(7)}px`)
-
 		},
 		"banner": {
+			"position": "relative",
 			"width": "100vw",
 			"height": "100vh",
 			"display": "flex",
 			"alignItems": "flex-end",
 			"justifyContent": "center",
-			"paddingBottom": theme.spacing(8)
+			"paddingBottom": theme.spacing(8),
+			"backdropFilter": "blur(10px)",
+		},
+		"filter": {
+			"position": "absolute",
+			"top": 0,
+			"left": 0,
+			"width": "100%",
+			"height": "100%",
+			"backdropFilter": "brightness(50%)"
+			
 
 		},
 		"concerts": {
