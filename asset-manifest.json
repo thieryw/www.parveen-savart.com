@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/www.parveen-savart.com/static/js/main.af0f1def.js",
+    "main.js": "/www.parveen-savart.com/static/js/main.3f3e53e1.js",
     "static/media/27-.jpeg": "/www.parveen-savart.com/static/media/27-.294ffb4ef6d3daece6b5.jpeg",
     "static/media/24-.jpeg": "/www.parveen-savart.com/static/media/24-.e4113a9b188e250927e0.jpeg",
     "static/media/27-.webp": "/www.parveen-savart.com/static/media/27-.04694989bf4b565d3dc0.webp",
@@ -90,9 +90,9 @@
     "static/media/cancel.svg": "/www.parveen-savart.com/static/media/cancel.da5c42223be72e07b42078ba244d26c0.svg",
     "static/media/next.svg": "/www.parveen-savart.com/static/media/next.2dc7a76f28f4feac65e5d1d0b70e240b.svg",
     "static/media/facebook.svg": "/www.parveen-savart.com/static/media/facebook.d1accecba2e811e519317b824c285acb.svg",
-    "main.af0f1def.js.map": "/www.parveen-savart.com/static/js/main.af0f1def.js.map"
+    "main.3f3e53e1.js.map": "/www.parveen-savart.com/static/js/main.3f3e53e1.js.map"
   },
   "entrypoints": [
-    "static/js/main.af0f1def.js"
+    "static/js/main.3f3e53e1.js"
   ]
 }
