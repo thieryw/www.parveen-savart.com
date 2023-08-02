@@ -98,10 +98,20 @@ export function Home() {
 
 			/>
 			<ArtGallery
-				thumbNailImageSources={imageSources}
-				lightBoxImageSources={imageSources}
-				thumbNailImages={webpFiles.files}
-				lightBoxImages={webpFiles.files}
+				images={webpFiles.files.map((file, index) => {
+					return {
+						"thumbNail": {
+							"src": file.url,
+							"alt": `${file.name} thumbnail`,
+							"sources": imageSources[index]
+						},
+						"lightBox": {
+							"src": file.url,
+							"alt": `${file.name} thumbnail`,
+							"sources": imageSources[index]
+						}
+					}
+				})}
 				imageAverageHeight={200}
 				hideImageNames={true}
 				className={classes.gallery}
@@ -201,8 +211,6 @@ const useStyles = makeStyles()(theme => ({
 	},
 	"parallax": {
 		...theme.spacing.rightLeft("padding", `${theme.spacing(theme.windowInnerWidth < breakpointsValues.md ? 4 : 7)}px`),
-		"position": "relative"
-
 	},
 	"mediaSectionTitle": {
 		"marginBottom": theme.spacing(7)

@@ -45,10 +45,20 @@ export function Media() {
 			/>
 
 			<ArtGallery
-				thumbNailImageSources={imageSources}
-				lightBoxImageSources={imageSources}
-				thumbNailImages={webpFiles.files}
-				lightBoxImages={webpFiles.files}
+				images={webpFiles.files.map((file, index) => {
+					return {
+						"thumbNail": {
+							"src": file.url,
+							"alt": `${file.name} thumbnail`,
+							"sources": imageSources[index]
+						},
+						"lightBox": {
+							"src": file.url,
+							"alt": `${file.name} thumbnail`,
+							"sources": imageSources[index]
+						}
+					}
+				})}
 				imageAverageHeight={200}
 				hideImageNames={true}
 				className={classes.gallery}

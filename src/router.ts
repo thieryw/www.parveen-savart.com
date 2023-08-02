@@ -1,13 +1,15 @@
 import {createRouter, defineRoute} from "type-route";
 import {makeThisModuleAnExecutableRouteLister} from "github-pages-plugin-for-type-route";
 
+const publicUrl = process.env["PUBLIC_URL"];
+
 export const routeDefs = {
-	"home": defineRoute("/www.parveen-savart.com"),
-	"bio": defineRoute("/biography"),
-	"legal": defineRoute("/mentions-legal"),
-	"agenda": defineRoute("/agenda"),
-	"media": defineRoute("/media"),
-	"contact": defineRoute("/contact")
+	"home": defineRoute(publicUrl || "/"),
+	"bio": defineRoute(publicUrl + "/biography"),
+	"legal": defineRoute(publicUrl + "/mentions-legal"),
+	"agenda": defineRoute(publicUrl + "/agenda"),
+	"media": defineRoute(publicUrl + "/media"),
+	"contact": defineRoute(publicUrl + "/contact")
 };
 
 makeThisModuleAnExecutableRouteLister(routeDefs);
